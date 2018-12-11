@@ -1,0 +1,27 @@
+.view-trail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.view-trail h2 {
+  border: solid 1px brown;
+  width: 100%;
+  margin: 0;
+  padding: 2% 0;
+}
+.view-trail ol {
+  border: solid 1px green;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  overflow-y: scroll;
+}
+.view-trail ol li {
+  border: solid 1px blue;
+  width: 80%;
+}

@@ -2,23 +2,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: pink;
+  background: white;
 }
 .welcome {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: skyblue;
 }
 form {
   border: solid 1px green;
-  width: 50vh;
-  height: 50vh;
+  width: 60vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background: white;
+  background: linear-gradient( #2ebf91, #8360c3);
 }
 form label {
   border: solid 1px brown;
@@ -26,17 +27,21 @@ form label {
   text-align: left;
   margin: 0;
   padding: 0;
+  color: white;
 }
 form input {
-  border: solid 1px red;
+  border: solid 0px red;
+  border-radius: 1em;
   width: 80%;
-  height: 10%;
+  height: 8%;
   margin: 0;
   padding: 0;
   font-size: 1em;
 }
 form button {
-  border: solid 1px black;
+  border: solid 1px white;
   border-radius: 0.5em;
   font-size: 1.5em;
+  background: transparent;
+  color: white;
 }

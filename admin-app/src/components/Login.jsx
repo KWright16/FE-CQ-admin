@@ -65,6 +65,10 @@ class Login extends Component {
       .then(user => {
         if (user.password === this.state.password) {
           login(user);
+          this.setState({
+            username: '',
+            password: ''
+          })
         } else {
           console.log("not a valid password");
         }

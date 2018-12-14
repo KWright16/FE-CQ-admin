@@ -23,7 +23,7 @@ class App extends Component {
           <Login path="/" login={this.login} user={this.state.user}/>
           <ViewAllTrails path="trails" />
           <ViewTrail path="trails/:trail_id" />
-          <AddTrail path="trails/new" />
+          <AddTrail path="trails/new" user={this.state.user}/>
         </Router>
       </div>
     );

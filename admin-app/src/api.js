@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const BASE_URL = "https://city-quest-game.herokuapp.com/api/";
+//const BASE_URL = "https://city-quest-game.herokuapp.com/api/";
+const BASE_URL = '//localhost:8080/api'
 
 export const getAdminByUsername = async username => {
   const { data } = await axios.get(`${BASE_URL}/admins/${username}`);
@@ -18,12 +19,18 @@ export const getTrailByTrailId = async trail_id => {
 };
 
 export const addTrail = async (newTrail, username) => {
-  const {name, id, region} = newTrail
-  console.log(newTrail)
-  console.log(username)
-  const { data } = axios.post(`${BASE_URL}/admins/${username}/trails`, {
-    name, id, region
+  const {name, region} = newTrail
+  
+  const { data } = await axios.post(`${BASE_URL}/admins/${username}/trails`, {
+    name, region
   })
-  console.log(data)
+
+  console.log(data, '<<<')
+  return data.id
+}
+
+export const addRoute = async (routeArray, username, id) => {
+  
+  const { data } = axios.patch(`${BASE_URL}/admins/${username}/trails`, {routeArray, id})
   return data
 }

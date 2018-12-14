@@ -24,6 +24,7 @@ class App extends Component {
           <ViewAllTrails path="trails" />
           <ViewTrail path="trails/:trail_id" />
           <AddTrail path="trails/new" user={this.state.user}/>
+          
         </Router>
       </div>
     );

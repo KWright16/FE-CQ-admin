@@ -10,6 +10,7 @@ const Trail = props => {
       <Link to={`/trails/${trail.id}`}>{trail.name}</Link>
       <p>Region: {trail.region.city}</p>
       <p>Duration: {convertTime(trail.duration)}</p>
+      
     </li>
   );
 };

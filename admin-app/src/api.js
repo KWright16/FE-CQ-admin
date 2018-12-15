@@ -25,12 +25,18 @@ export const addTrail = async (newTrail, username) => {
     name, region
   })
 
-  console.log(data, '<<<')
+ 
   return data.id
 }
 
 export const addRoute = async (routeArray, username, id) => {
   
-  const { data } = axios.patch(`${BASE_URL}/admins/${username}/trails`, {routeArray, id})
+  const { data } = await axios.patch(`${BASE_URL}/admins/${username}/trails`, {routeArray, id})
+  return data.challengeIds
+}
+
+export const updateChallenge = async (challengeType, question, answer, picture, challengeId, username) => {
+  const { data } = await axios.patch(`${BASE_URL}/admins/${username}/challenges/${challengeId}`,
+       {challengeType, question, answer, picture})
   return data
 }

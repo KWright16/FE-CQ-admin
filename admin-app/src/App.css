@@ -32,3 +32,9 @@
   background-color: white;
   color: #8360c3;
 }
+
+.challengeIds {
+  border: 1px black solid;
+  padding: 10px;
+  margin: 5px;
+}

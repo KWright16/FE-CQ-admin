@@ -8,6 +8,7 @@ import ViewTrail from './components/ViewTrail'
 import AddTrail from './components/AddTrail'
 import Sidebar from './components/Sidebar'
 import Footer from './components/Footer';
+import UpdateChallenge from './components/UpdateChallenge';
 
 class App extends Component {
   state = {
@@ -24,6 +25,7 @@ class App extends Component {
           <ViewAllTrails path="trails" />
           <ViewTrail path="trails/:trail_id" />
           <AddTrail path="trails/new" user={this.state.user}/>
+          <UpdateChallenge path="admins/:adminName/challenges/:challengeId" username={this.state.user.username}/>
           
         </Router>
       </div>

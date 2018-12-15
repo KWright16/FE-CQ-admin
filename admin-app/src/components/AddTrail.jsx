@@ -1,10 +1,10 @@
 /*global google */
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import './css/AddTrail.css'
 import Geosuggest from 'react-geosuggest'
 import './css/GeoSuggest.css'
-import * as api from '../api.js'
+import * as api from '../api.js';
+import AddChallenges from './AddChallenges'
 
 class AddTrail extends Component {
   state = {
@@ -14,8 +14,11 @@ class AddTrail extends Component {
       city: '',
       lat: '',
       long: ''
-    }
+    },
+    challengeIds: [],
+    displayChallengeAdder: false
   }
+
   render() {
     const fixtures = [
     ];
@@ -98,6 +101,11 @@ class AddTrail extends Component {
         <button>Create</button>
         </form>
 
+        { this.state.displayChallengeAdder &&  
+             <AddChallenges 
+                challengeIds = {this.state.challengeIds}
+                username = {this.props.user.username}/>}
+
         
       </main>
     );
@@ -133,11 +141,16 @@ class AddTrail extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     const { user} = this.props
-    console.log(user.username)
+
     api.addTrail(this.state, user.username)
     .then((id) => {
 
-      api.addRoute(this.state.route, user.username, id)
+      return api.addRoute(this.state.route, user.username, id)
+    })
+    .then(challengeIds => {
+      console.log(challengeIds)
+      this.setState({challengeIds, 
+      displayChallengeAdder: true})
     })
   }
 
@@ -153,12 +166,9 @@ class AddTrail extends Component {
         long: suggest.location.lng
       })
     })
-    console.log(suggest, "selected");
   }
 }
 
-AddTrail.propTypes = {
 
-};
 
 export default AddTrail;

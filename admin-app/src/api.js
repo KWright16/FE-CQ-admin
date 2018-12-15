@@ -40,3 +40,8 @@ export const updateChallenge = async (challengeType, question, answer, picture, 
        {challengeType, question, answer, picture})
   return data
 }
+
+export const getChallengeById = async (challengeId) => {
+  const { data } = await axios.get(`${BASE_URL}/challenges/${challengeId}`)
+  return data.challenge
+}

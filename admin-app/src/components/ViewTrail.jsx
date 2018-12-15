@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { Link } from '@reach/router';
 import * as api from '../api.js'
 import './css/ViewTrail.css'
 
@@ -15,9 +15,9 @@ class ViewTrail extends Component {
   render() {
     const {trail_id} = this.props
     const {trail} = this.state
-    console.log(trail.region, 'region')
+    
     return (
-      <main class="view-trail">
+      <main className="view-trail">
         <h2>{trail.name}</h2>
         <h3>Region: {trail.region.city}</h3>
         <h4>Duration: {trail.duration}</h4>
@@ -26,8 +26,8 @@ class ViewTrail extends Component {
       
         
       
-         {trail.route.map(location => <div>Location Name: {location.locationName}<br/>
-            Challenge Id: {location.challengeId} <br/> <br/>
+         {trail.route.map(location => <div key={location.locationName}>Location Name: {location.locationName}<br/>
+           <Link to={`/challenges/${location.challengeId}`}> Challenge Id: {location.challengeId} </Link><br/> <br/>
          </div>)}
       
      
@@ -46,8 +46,6 @@ class ViewTrail extends Component {
   }
 }
 
-ViewTrail.propTypes = {
 
-};
 
 export default ViewTrail;

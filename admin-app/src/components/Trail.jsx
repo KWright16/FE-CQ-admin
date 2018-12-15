@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from '@reach/router'
 import convertTime from '../utils/index.js'
 
@@ -15,8 +14,6 @@ const Trail = props => {
   );
 };
 
-Trail.propTypes = {
-  
-};
+
 
 export default Trail;

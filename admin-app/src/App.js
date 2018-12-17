@@ -1,34 +1,39 @@
-import React, { Component } from 'react';
-import './App.css';
-import { Router, navigate } from '@reach/router'
-import Header from './components/Header'
-import Login from './components/Login'
-import ViewAllTrails from './components/ViewAllTrails'
-import ViewTrail from './components/ViewTrail'
-import AddTrail from './components/AddTrail'
-import Sidebar from './components/Sidebar'
-import Footer from './components/Footer';
-import UpdateChallenge from './components/UpdateChallenge';
-import ViewChallenge from './components/ViewChallenge';
+import React, { Component } from "react";
+import "./App.css";
+import { Router, navigate } from "@reach/router";
+import Header from "./components/Header";
+import Login from "./components/Login";
+import ViewAllTrails from "./components/ViewAllTrails";
+import ViewTrail from "./components/ViewTrail";
+import AddTrail from "./components/AddTrail";
+import Sidebar from "./components/Sidebar";
+import Footer from "./components/Footer";
+import UpdateChallenge from "./components/UpdateChallenge";
+import ViewChallenge from "./components/ViewChallenge";
 
 class App extends Component {
   state = {
-    user: ''
-  }
+    user: ""
+  };
   render() {
     return (
       <div className="App">
         <Header />
-        <Sidebar logout={this.logout} user={this.state.user}/>
+        <Sidebar logout={this.logout} user={this.state.user} />
         <Footer />
         <Router>
-          <Login path="/" login={this.login} user={this.state.user}/>
+          <Login path="/" login={this.login} user={this.state.user} />
           <ViewAllTrails path="trails" />
           <ViewTrail path="trails/:trail_id" />
-          <AddTrail path="trails/new" user={this.state.user}/>
-          <UpdateChallenge path="admins/:adminName/challenges/:challengeId" username={this.state.user.username}/>
-          <ViewChallenge path="/challenges/:challengeId"  username={this.state.user.username}/>
-
+          <AddTrail path="trails/new" user={this.state.user} />
+          <UpdateChallenge
+            path="admins/:adminName/challenges/:challengeId"
+            username={this.state.user.username}
+          />
+          <ViewChallenge
+            path="/challenges/:challengeId"
+            username={this.state.user.username}
+          />
         </Router>
       </div>
     );
@@ -58,7 +63,7 @@ class App extends Component {
     this.setState({
       user: {}
     });
-    navigate("/")
+    navigate("/");
   };
 }
 

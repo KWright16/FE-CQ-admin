@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { storage } from "../firebase";
 
 class ImageUpload extends Component {
@@ -51,6 +50,6 @@ class ImageUpload extends Component {
   };
 }
 
-ImageUpload.propTypes = {};
+
 
 export default ImageUpload;

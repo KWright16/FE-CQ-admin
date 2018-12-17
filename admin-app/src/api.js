@@ -37,19 +37,12 @@ export const addRoute = async (routeArray, username, id) => {
   return data.challengeIds;
 };
 
-export const updateChallenge = async (
-  challengeType,
-  question,
-  answer,
-  picture,
-  challengeId,
-  username
+export const updateChallenge = async ( challengeType, question, answer, URL, challengeId, username
 ) => {
   const { data } = await axios.post(
     `${BASE_URL}/admins/${username}/challenges/${challengeId}`,
-    { challengeType, question, answer, picture }
-  );
-  console.log("hello you have tried to post a picture");
+    { challengeType, question, answer, URL } );
+    
   return data;
 };
 

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import * as api from '../api.js'
 import Trail from './Trail'
 import './css/ViewAllTrails.css'
@@ -11,7 +10,7 @@ class ViewAllTrails extends Component {
   render() {
     const { trails } = this.state
     return (
-      <main class="view-trails">
+      <main className="view-trails">
         <h2>List of Trails</h2>
         <ul>
           {trails.map((trail) => {
@@ -31,8 +30,5 @@ class ViewAllTrails extends Component {
   }
 }
 
-ViewAllTrails.propTypes = {
-
-};
 
 export default ViewAllTrails;

@@ -1,24 +1,21 @@
 import React, { Component } from "react";
 import ImageUpload from "./ImageUpload";
 import * as api from "../api";
-import axios from "axios";
 
 class UpdateChallenge extends Component {
   state = {
     challengeType: "",
     question: "",
     answer: "",
-    picture: "",
-    selectedFile: null,
-    loaded: 0,
     URL: ""
   };
 
   render() {
     return (
       <main>
-        {console.log(this.state.picture)}
+        
         <h2>{this.props.challengeId}</h2> <br /> <br />
+
         <form onSubmit={this.handleSubmit}>
           <select value={this.state.challengeType} onChange={this.handleChange}>
             <option>Choose Challenge Type</option>
@@ -44,7 +41,11 @@ class UpdateChallenge extends Component {
               />
             </div>
           ) : this.state.challengeType === "image-recognition" ? (
-            <div>{<ImageUpload setURL={this.setURL} />}</div>
+            <div>
+               <input placeholder='type question' onChange={this.handleInputChange} /> <br/> <br></br>
+               {<ImageUpload setURL={this.setURL} />}
+               {this.state.URL && <>'Image Uploaded'</>}
+               </div>
           ) : (
             <div />
           )}
@@ -68,16 +69,12 @@ class UpdateChallenge extends Component {
     });
   };
 
-  onDrop = picture => {
-    console.log(picture[0], "this is your file");
-    this.setState({ picture: picture[0] });
-  };
 
   handleSubmit = event => {
     event.preventDefault();
-    const { picture } = this.state;
+    const { challengeType, question, answer, URL } = this.state;
     const { challengeId, username } = this.props;
-    api.updateChallenge(challengeId, username);
+    api.updateChallenge(challengeType, question, answer, URL, challengeId, username);
   };
 }
 

@@ -1,11 +1,11 @@
 import axios from "axios";
 
 // const BASE_URL = "https://city-quest-game.herokuapp.com/api/";
-const BASE_URL = '//localhost:8080/api'
+const BASE_URL = "//localhost:8080/api";
 
 export const getAdminByUsername = async username => {
   const { data } = await axios.get(`${BASE_URL}/admins/${username}`);
-  return {username, password: data.password};
+  return { username, password: data.password };
 };
 
 export const getAllTrails = async () => {
@@ -19,29 +19,41 @@ export const getTrailByTrailId = async trail_id => {
 };
 
 export const addTrail = async (newTrail, username) => {
-  const {name, region} = newTrail
-  
-  const { data } = await axios.post(`${BASE_URL}/admins/${username}/trails`, {
-    name, region
-  })
+  const { name, region } = newTrail;
 
- 
-  return data.id
-}
+  const { data } = await axios.post(`${BASE_URL}/admins/${username}/trails`, {
+    name,
+    region
+  });
+
+  return data.id;
+};
 
 export const addRoute = async (routeArray, username, id) => {
-  
-  const { data } = await axios.patch(`${BASE_URL}/admins/${username}/trails`, {routeArray, id})
-  return data.challengeIds
-}
+  const { data } = await axios.patch(`${BASE_URL}/admins/${username}/trails`, {
+    routeArray,
+    id
+  });
+  return data.challengeIds;
+};
 
-export const updateChallenge = async (challengeType, question, answer, picture, challengeId, username) => {
-  const { data } = await axios.patch(`${BASE_URL}/admins/${username}/challenges/${challengeId}`,
-       {challengeType, question, answer, picture})
-  return data
-}
+export const updateChallenge = async (
+  challengeType,
+  question,
+  answer,
+  picture,
+  challengeId,
+  username
+) => {
+  const { data } = await axios.post(
+    `${BASE_URL}/admins/${username}/challenges/${challengeId}`,
+    { challengeType, question, answer, picture }
+  );
+  console.log("hello you have tried to post a picture");
+  return data;
+};
 
-export const getChallengeById = async (challengeId) => {
-  const { data } = await axios.get(`${BASE_URL}/challenges/${challengeId}`)
-  return data.challenge
-}
+export const getChallengeById = async challengeId => {
+  const { data } = await axios.get(`${BASE_URL}/challenges/${challengeId}`);
+  return data.challenge;
+};

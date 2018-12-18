@@ -14,7 +14,7 @@ class ViewTrail extends Component {
     }
   }
   render() {
-    const {trail_id} = this.props
+    
     const {trail} = this.state
     
     return (

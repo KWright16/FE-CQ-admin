@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import "./css/Login.css";
 import * as api from "../api.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -80,6 +79,5 @@ class Login extends Component {
   };
 }
 
-Login.propTypes = {};
 
 export default Login;

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from '@reach/router'
 import './css/Header.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,8 +14,6 @@ const Header = props => {
   );
 };
 
-Header.propTypes = {
-  
-};
+
 
 export default Header;

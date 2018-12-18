@@ -10,13 +10,9 @@ const Header = props => {
     <header>
       <h1><Link to="/"> CITY
             <FontAwesomeIcon icon={faSearchLocation} />
-            QUEST Manager</Link></h1>
+        QUEST Manager</Link></h1>
     </header>
   );
-};
-
-Header.propTypes = {
-  
 };
 
 export default Header;

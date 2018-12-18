@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { Link } from "@reach/router";
 import "./css/Sidebar.css";
 import Icon from "@mdi/react";
-import { mdiMapPlus, mdiMap, mdiMapSearch, mdiAccount, mdiLogoutVariant, mdiRunFast } from "@mdi/js";
+import { mdiMapPlus, mdiMapSearch, mdiAccount, mdiLogoutVariant, mdiRunFast } from "@mdi/js";
 
 class Sidebar extends Component {
   render() {
@@ -47,6 +46,6 @@ class Sidebar extends Component {
   };
 }
 
-Sidebar.propTypes = {};
+
 
 export default Sidebar;

@@ -53,7 +53,7 @@ class AddTrail extends Component {
             onSuggestNoResults={this.onSuggestNoResults}
             location={new google.maps.LatLng(51.50853, -0.12574)}
             radius="20"
-            placeholder="Location Location"
+            placeholder="Enter a location"
           />
 
           <Geosuggest
@@ -65,7 +65,7 @@ class AddTrail extends Component {
             onSuggestNoResults={this.onSuggestNoResults}
             location={new google.maps.LatLng(51.50853, -0.12574)}
             radius="20"
-            placeholder="Location Location"
+            placeholder="Enter a location"
           />
 
           <Geosuggest
@@ -77,7 +77,7 @@ class AddTrail extends Component {
             onSuggestNoResults={this.onSuggestNoResults}
             location={new google.maps.LatLng(51.50853, -0.12574)}
             radius="20"
-            placeholder="Location Location"
+            placeholder="Enter a location"
           />
           <Geosuggest
             fixtures={fixtures}
@@ -88,7 +88,7 @@ class AddTrail extends Component {
             onSuggestNoResults={this.onSuggestNoResults}
             location={new google.maps.LatLng(51.50853, -0.12574)}
             radius="20"
-            placeholder="Location Location"
+            placeholder="Enter a location"
           />
 
           <Geosuggest
@@ -100,7 +100,7 @@ class AddTrail extends Component {
             onSuggestNoResults={this.onSuggestNoResults}
             location={new google.maps.LatLng(51.50853, -0.12574)}
             radius="20"
-            placeholder="Location Location"
+            placeholder="Enter a location"
           />
           <button>Create</button>
         </form>
@@ -119,28 +119,23 @@ class AddTrail extends Component {
       [event.target.name]: event.target.value
     });
   };
-  // onFocus() {
-  //   console.log('onFocus');
-  // }
-  // onBlur(value)  {
-  //   console.log('onBlur', value);
-  // }
-  onChange(value) {
-    console.log('input changes to :' + value);
-  }
+  
+  
+
   onSuggestSelect = suggest => {
-    this.setState({
-      region: {
-        city: suggest.gmaps.vicinity,
-        lat: suggest.location.lat,
-        long: suggest.location.lng
-      }
-    });
-    console.log(suggest, "selected");
+    if (suggest) {
+      this.setState({
+        region: {
+          city: suggest.gmaps.vicinity,
+          lat: suggest.location.lat,
+          long: suggest.location.lng
+        }
+      });
+    }
+    
+    
   };
-  onSuggestNoResults(userInput) {
-    console.log("onSuggestNoResults for :" + userInput);
-  }
+  
 
   handleSubmit = event => {
     event.preventDefault();
@@ -152,23 +147,27 @@ class AddTrail extends Component {
         return api.addRoute(this.state.route, user.username, id);
       })
       .then(challengeIds => {
-        console.log(challengeIds);
+        
         this.setState({ challengeIds, displayChallengeAdder: true });
       });
   };
 
-  // onLocationChange = (event) => {
-  //   this.setState
-  // }
+  
 
   onSuggestSelectLocation = suggest => {
-    this.setState({
-      route: this.state.route.concat({
-        locationName: suggest.gmaps.name,
-        lat: suggest.location.lat,
-        long: suggest.location.lng
-      })
-    });
+
+    if (suggest) {
+
+      this.setState({
+        route: this.state.route.concat({
+          locationName: suggest.gmaps.name,
+          lat: suggest.location.lat,
+          long: suggest.location.lng
+        })
+      });
+
+    }
+    
   };
 }
 

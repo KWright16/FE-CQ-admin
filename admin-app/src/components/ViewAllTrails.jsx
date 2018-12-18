@@ -14,7 +14,7 @@ class ViewAllTrails extends Component {
         <h2>List of Trails</h2>
         <ul>
           {trails.map((trail) => {
-            return <Trail trail={trail}/>
+            return <Trail removeDeletedTrail={this.removeDeletedTrail} trail={trail}/>
           })}
         </ul>
       </main>
@@ -26,6 +26,15 @@ class ViewAllTrails extends Component {
       this.setState({
         trails
       })
+    })
+  }
+
+  removeDeletedTrail = (trailId) => {
+
+    const filteredTrails = this.state.trails.filter(trail => trail.id !== trailId)
+    this.setState({
+  
+        trails : filteredTrails
     })
   }
 }

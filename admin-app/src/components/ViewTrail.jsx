@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from '@reach/router';
 import * as api from '../api.js'
-import './css/ViewTrail.css'
+import './css/ViewTrail.css';
+import convertTime from '../utils/index.js'
 
 class ViewTrail extends Component {
   state = {
@@ -20,14 +21,16 @@ class ViewTrail extends Component {
       <main className="view-trail">
         <h2>{trail.name}</h2>
         <h3>Region: {trail.region.city}</h3>
-        <h4>Duration: {trail.duration}</h4>
+        <h4>Duration: {convertTime(trail.duration)}</h4>
         
         <h3>List of locations:</h3>
       
         
       
-         {trail.route.map(location => <div key={location.locationName}>Location Name: {location.locationName}<br/>
-           <Link to={`/challenges/${location.challengeId}`}> Challenge Id: {location.challengeId} </Link><br/> <br/>
+         {trail.route.map(location => <div key={location.locationName}>Location Name: {location.name}<br/>
+         Latitude: {location.lat} <br></br>
+         Longitude: {location.long} <br></br>
+            Challenge Id: <Link to={`/challenges/${location.challengeId}`}>{location.challengeId} </Link><br/> <br/>
          </div>)}
       
      

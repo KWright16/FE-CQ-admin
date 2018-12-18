@@ -38,7 +38,7 @@ class AddTrail extends Component {
             onChange={this.onChange}
             onSuggestSelect={this.onSuggestSelect}
             onSuggestNoResults={this.onSuggestNoResults}
-            location={new google.maps.LatLng(53.558572, 9.9278215)}
+            location={new google.maps.LatLng(51.50853, -0.12574)}
             radius="20"
             placeholder="Enter a city"
           />
@@ -51,7 +51,7 @@ class AddTrail extends Component {
             onChange={this.onLocationChange}
             onSuggestSelect={this.onSuggestSelectLocation}
             onSuggestNoResults={this.onSuggestNoResults}
-            location={new google.maps.LatLng(53.558572, 9.9278215)}
+            location={new google.maps.LatLng(51.50853, -0.12574)}
             radius="20"
             placeholder="Location Location"
           />
@@ -63,7 +63,7 @@ class AddTrail extends Component {
             onChange={this.onLocationChange}
             onSuggestSelect={this.onSuggestSelectLocation}
             onSuggestNoResults={this.onSuggestNoResults}
-            location={new google.maps.LatLng(53.558572, 9.9278215)}
+            location={new google.maps.LatLng(51.50853, -0.12574)}
             radius="20"
             placeholder="Location Location"
           />
@@ -75,7 +75,7 @@ class AddTrail extends Component {
             onChange={this.onLocationChange}
             onSuggestSelect={this.onSuggestSelectLocation}
             onSuggestNoResults={this.onSuggestNoResults}
-            location={new google.maps.LatLng(53.558572, 9.9278215)}
+            location={new google.maps.LatLng(51.50853, -0.12574)}
             radius="20"
             placeholder="Location Location"
           />
@@ -86,7 +86,7 @@ class AddTrail extends Component {
             onChange={this.onLocationChange}
             onSuggestSelect={this.onSuggestSelectLocation}
             onSuggestNoResults={this.onSuggestNoResults}
-            location={new google.maps.LatLng(53.558572, 9.9278215)}
+            location={new google.maps.LatLng(51.50853, -0.12574)}
             radius="20"
             placeholder="Location Location"
           />
@@ -98,7 +98,7 @@ class AddTrail extends Component {
             onChange={this.onLocationChange}
             onSuggestSelect={this.onSuggestSelectLocation}
             onSuggestNoResults={this.onSuggestNoResults}
-            location={new google.maps.LatLng(53.558572, 9.9278215)}
+            location={new google.maps.LatLng(51.50853, -0.12574)}
             radius="20"
             placeholder="Location Location"
           />
@@ -125,9 +125,9 @@ class AddTrail extends Component {
   // onBlur(value)  {
   //   console.log('onBlur', value);
   // }
-  // onChange(value) {
-  //   console.log('input changes to :' + value);
-  // }
+  onChange(value) {
+    console.log('input changes to :' + value);
+  }
   onSuggestSelect = suggest => {
     this.setState({
       region: {

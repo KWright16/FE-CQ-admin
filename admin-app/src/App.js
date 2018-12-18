@@ -10,6 +10,8 @@ import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import UpdateChallenge from "./components/UpdateChallenge";
 import ViewChallenge from "./components/ViewChallenge";
+import LeaderBoard from "./components/LeaderBoard";
+
 
 class App extends Component {
   state = {
@@ -34,6 +36,7 @@ class App extends Component {
             path="/challenges/:challengeId"
             username={this.state.user.username}
           />
+          <LeaderBoard path='players' /> 
         </Router>
       </div>
     );

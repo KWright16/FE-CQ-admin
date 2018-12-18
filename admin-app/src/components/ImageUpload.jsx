@@ -17,7 +17,7 @@ class ImageUpload extends Component {
   }
 
   handleChange = event => {
-    console.log("were in here");
+    
     if (event.target.files[0]) {
       const image = event.target.files[0];
       this.setState(() => ({ image }));

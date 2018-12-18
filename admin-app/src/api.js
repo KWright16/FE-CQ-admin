@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const BASE_URL = "https://city-quest-game.herokuapp.com/api/";
-const BASE_URL = "//localhost:8080/api";
+ const BASE_URL = "https://city-quest-game.herokuapp.com/api/";
+//const BASE_URL = "//localhost:8080/api";
 
 export const getAdminByUsername = async username => {
   const { data } = await axios.get(`${BASE_URL}/admins/${username}`);

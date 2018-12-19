@@ -14,7 +14,9 @@ class ViewAllTrails extends Component {
         <h2 className="header">List of Trails</h2>
         <ul>
           {trails.map((trail) => {
-            return <Trail removeDeletedTrail={this.removeDeletedTrail} trail={trail} />
+
+            return <Trail key={trail.id} removeDeletedTrail={this.removeDeletedTrail} trail={trail}/>
+
           })}
         </ul>
       </main>

@@ -15,11 +15,11 @@ import LeaderBoard from "./components/LeaderBoard";
 
 class App extends Component {
   state = {
-    user: ""
+    user: {}
   };
   render() {
     return (
-      <div className={this.state.user.length === 0 ? "App-logged-out App" : "App"}>
+      <div className={!this.state.user.username ? "App-logged-out App" : "App"}>
         <Header />
         <Sidebar logout={this.logout} user={this.state.user} />
         <Footer />

@@ -7,9 +7,15 @@
   width: 100%;
   margin: 0;
   padding: 2% 0;
+  color: white;
+}
+.trail-content h3 {
+  color: #5990AA;
+}
+.trail-content h4 {
+  color: rgb(39, 39, 39);  
 }
 .view-trail ol {
-
   border: red 1px solid;
   padding: 0;
   margin: 0;
@@ -29,3 +35,24 @@
   width:100%;
   height: 100vh;
 }
+.vt-link {
+  text-decoration: none;
+  color: rgb(39, 39, 39);
+}
+.trail-content p {
+  color:rgb(39, 39, 39);
+}
+/* .location { */
+  /* border: red 1px solid; */
+  /* padding: 2em; */
+  /* display: grid; */
+  /* grid-template-columns: 1fr 3fr; */
+/* } */
+/* .location h4 { */
+  /* border:blue 1 px solid; */
+  /* grid-column: 1 / 2; */
+/* } */
+/* .location p { */
+  /* border:blue 1 px solid; */
+  /* grid-column: 2 / 3; */
+/* } */

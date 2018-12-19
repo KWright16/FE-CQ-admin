@@ -1,9 +1,12 @@
+p {
+  color: rgb(39, 39, 39)
+}
 .App {
   text-align: center;
   display: grid;
   grid-template-columns: 5fr 1fr;
   grid-template-rows: 2fr 14fr 1fr;
-  height: 100vh;
+  height: 100vh;  
 }
 .App-logged-out {
   text-align: center;

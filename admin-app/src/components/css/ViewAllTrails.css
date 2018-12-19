@@ -1,10 +1,28 @@
+.header {
+  color: #FFF;
+}
+.single-trail button {
+  background-color: #5990AA;
+  padding: 0.25em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 1em;
+  color: white;
+}
+.single-trail button:hover {
+  background-color: #6E78B7;
+  padding: 0.25em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 1em;
+  color: white;
+}
 .view-trails {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .view-trails h2 {
-  border: solid 1px brown;
   width: 100%;
   margin: 0;
   padding: 2% 0;
@@ -21,9 +39,24 @@
   align-items: center;
   width: 100%;
   overflow-y: scroll;
+  background-color: #fff;
 }
 .view-trails ul li {
-  border: solid 1px blue;
   list-style: none;
   width: 80%;
+  margin-top: 2em; 
+}
+.trail-link {
+  text-decoration: none;
+  
+}
+.trail-link h3:hover {
+  transform: scale(1.05);
+  color:  rgb(78, 78, 78)
+}
+.trail-link h3 {
+  font-size: 1.25em;
+  color: rgb(41, 41, 41);
+  margin:1em;
+  transition: all 0.2s ease-in-out;
 }

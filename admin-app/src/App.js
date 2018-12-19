@@ -19,7 +19,7 @@ class App extends Component {
   };
   render() {
     return (
-      <div className="App">
+      <div className={this.state.user.length === 0 ? "App-logged-out App" : "App"}>
         <Header />
         <Sidebar logout={this.logout} user={this.state.user} />
         <Footer />
@@ -36,7 +36,7 @@ class App extends Component {
             path="/challenges/:challengeId"
             username={this.state.user.username}
           />
-          <LeaderBoard path='players' /> 
+          <LeaderBoard path='players' />
         </Router>
       </div>
     );

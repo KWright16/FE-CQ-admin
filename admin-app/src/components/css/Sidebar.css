@@ -3,6 +3,7 @@ nav {
   background: linear-gradient( #2ebf91, #8360c3);
   /* background-color: white; */
 }
+
 nav ul {
   list-style: none;
   display: flex;

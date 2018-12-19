@@ -119,8 +119,8 @@ class AddTrail extends Component {
       [event.target.name]: event.target.value
     });
   };
-  
-  
+
+
 
   onSuggestSelect = suggest => {
     if (suggest) {
@@ -132,10 +132,10 @@ class AddTrail extends Component {
         }
       });
     }
-    
-    
+
+
   };
-  
+
 
   handleSubmit = event => {
     event.preventDefault();
@@ -147,12 +147,12 @@ class AddTrail extends Component {
         return api.addRoute(this.state.route, user.username, id);
       })
       .then(challengeIds => {
-        
+
         this.setState({ challengeIds, displayChallengeAdder: true });
       });
   };
 
-  
+
 
   onSuggestSelectLocation = suggest => {
 
@@ -167,7 +167,7 @@ class AddTrail extends Component {
       });
 
     }
-    
+
   };
 }
 

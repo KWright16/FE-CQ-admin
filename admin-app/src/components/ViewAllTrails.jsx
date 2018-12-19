@@ -11,10 +11,12 @@ class ViewAllTrails extends Component {
     const { trails } = this.state
     return (
       <main className="view-trails">
-        <h2>List of Trails</h2>
+        <h2 className="header">List of Trails</h2>
         <ul>
           {trails.map((trail) => {
+
             return <Trail key={trail.id} removeDeletedTrail={this.removeDeletedTrail} trail={trail}/>
+
           })}
         </ul>
       </main>
@@ -22,19 +24,19 @@ class ViewAllTrails extends Component {
   }
   componentDidMount() {
     api.getAllTrails()
-    .then((trails) => {
-      this.setState({
-        trails
+      .then((trails) => {
+        this.setState({
+          trails
+        })
       })
-    })
   }
 
   removeDeletedTrail = (trailId) => {
 
     const filteredTrails = this.state.trails.filter(trail => trail.id !== trailId)
     this.setState({
-  
-        trails : filteredTrails
+
+      trails: filteredTrails
     })
   }
 }

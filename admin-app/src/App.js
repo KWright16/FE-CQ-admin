@@ -15,11 +15,11 @@ import LeaderBoard from "./components/LeaderBoard";
 
 class App extends Component {
   state = {
-    user: ""
+    user: {}
   };
   render() {
     return (
-      <div className="App">
+      <div className={!this.state.user.username ? "App-logged-out App" : "App"}>
         <Header />
         <Sidebar logout={this.logout} user={this.state.user} />
         <Footer />
@@ -36,7 +36,7 @@ class App extends Component {
             path="/challenges/:challengeId"
             username={this.state.user.username}
           />
-          <LeaderBoard path='players' /> 
+          <LeaderBoard path='players' />
         </Router>
       </div>
     );

@@ -4,13 +4,19 @@
   align-items: center;
 }
 .view-trail h2 {
-  border: solid 1px brown;
   width: 100%;
   margin: 0;
   padding: 2% 0;
+  color: white;
+}
+.trail-content h3 {
+  color: #5990AA;
+}
+.trail-content h4 {
+  color: rgb(39, 39, 39);  
 }
 .view-trail ol {
-  border: solid 1px green;
+  border: red 1px solid;
   padding: 0;
   margin: 0;
   height: 100%;
@@ -22,6 +28,31 @@
   overflow-y: scroll;
 }
 .view-trail ol li {
-  border: solid 1px blue;
   width: 80%;
 }
+.trail-content {
+  background: white;
+  width:100%;
+  height: 100vh;
+}
+.vt-link {
+  text-decoration: none;
+  color: rgb(39, 39, 39);
+}
+.trail-content p {
+  color:rgb(39, 39, 39);
+}
+/* .location { */
+  /* border: red 1px solid; */
+  /* padding: 2em; */
+  /* display: grid; */
+  /* grid-template-columns: 1fr 3fr; */
+/* } */
+/* .location h4 { */
+  /* border:blue 1 px solid; */
+  /* grid-column: 1 / 2; */
+/* } */
+/* .location p { */
+  /* border:blue 1 px solid; */
+  /* grid-column: 2 / 3; */
+/* } */

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as api from '../api';
+import './css/leaderboard.css'
 
 class LeaderBoard extends Component {
 
@@ -12,28 +13,32 @@ class LeaderBoard extends Component {
 
         return (
 
-            <main>
-                <h2>Leader Board</h2> 
-                {players.map(player => <div>
-                   Player: {player.playerName} <br/>
-                  Time Taken:  {player.totalTime} <br/> <br/>
-                </div>)}
-            </main>
-             
+            <main className='leaderboard'>
+                <h2>Leader Board</h2>
+                <div className='leaderboard-content'>
+                    <div className='leaderboard-c'>
+                        {players.map(player => <div>
+                            Player: {player.playerName} <br />
+                            Time Taken:  {player.totalTime} <br /> <br />
+                        </div>)}
+                    </div>
+                </div>
+            </main >
+
         );
     }
 
     componentDidMount() {
-       api.getLeaderBoardPlayers()
-       .then(players => {
-           const sortedPlayers = players.sort((a, b) => {
-              return a.totalTime - b.totalTime
-           })
+        api.getLeaderBoardPlayers()
+            .then(players => {
+                const sortedPlayers = players.sort((a, b) => {
+                    return a.totalTime - b.totalTime
+                })
 
-           this.setState({
-               players: sortedPlayers
-           })
-       })
+                this.setState({
+                    players: sortedPlayers
+                })
+            })
     }
 }
 

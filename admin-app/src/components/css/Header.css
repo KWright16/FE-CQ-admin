@@ -1,6 +1,6 @@
 header a:link, header a:visited {
   text-decoration: none;
-  color: #2ebf91;
+  color: white;
 }
 header {
   display: flex;
@@ -9,10 +9,16 @@ header {
   align-content: center;
   /* background: linear-gradient(to left, #53A97A, #2EA7D8); */
   /* background: #2ebf91; */
-  background-color: white;
+  background-color: #2ebf91;
 }
 h1 {
   padding: 1em;
   margin: 0;
   align-self: center;
+}
+img {
+  height: 2em;
+  width: auto;
+  margin: 0;
+  padding: 0;
 }

@@ -7,9 +7,10 @@ import { faSearchLocation } from "@fortawesome/free-solid-svg-icons";
 const Header = props => {
   return (
     <header>
-      <h1><Link to="/"> CITY
+      {/* <h1><Link to="/"> CITY
             <FontAwesomeIcon icon={faSearchLocation} />
-        QUEST Manager</Link></h1>
+        UEST Manager</Link></h1> */}
+        <h1><Link to="/"> <img src='./assets/title.png'/></Link></h1>
     </header>
   );
 };

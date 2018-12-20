@@ -1,31 +1,17 @@
-.header {
-  color: #FFF;
-}
-.single-trail button {
-  background-color: #5990AA;
-  padding: 0.25em;
-  padding-left: 1em;
-  padding-right: 1em;
-  border-radius: 1em;
-  color: white;
-}
-.single-trail button:hover {
-  background-color: #6E78B7;
-  padding: 0.25em;
-  padding-left: 1em;
-  padding-right: 1em;
-  border-radius: 1em;
-  color: white;
-}
 .view-trails {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: solid 1px gold;
+}
+.header {
+  color: #515151;
 }
 .view-trails h2 {
   width: 100%;
   margin: 0;
   padding: 2% 0;
+  color: yellow;
 }
 .view-trails ul {
   border: solid 1px green;
@@ -44,19 +30,38 @@
 .view-trails ul li {
   list-style: none;
   width: 80%;
-  margin-top: 2em; 
+  margin-top: 0; 
+  border: solid 1px magenta;
 }
-.trail-link {
-  text-decoration: none;
-  
+.single-trail {
+  border: solid 1px brown;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
-.trail-link h3:hover {
-  transform: scale(1.05);
-  color:  rgb(78, 78, 78)
+.single-trail a:link, .single-trail a:visited {
+  border: solid 1px green;
+  grid-row: 1 / 2;
+  grid-column: 1 / 4;
+  background-color: yellow;
 }
-.trail-link h3 {
-  font-size: 1.25em;
-  color: rgb(41, 41, 41);
-  margin:1em;
-  transition: all 0.2s ease-in-out;
+.single-trail p {
+  border: solid 1px black;
+  grid-row: 2 / 3;
+}
+.single-trail button {
+  grid-row: 2 / 3;
+  background-color: #5990AA;
+  border-radius: 1em;
+  color: white;
+  border: solid 1px;
+  width: 50%;
+}
+.single-trail button:hover {
+  background-color: #6E78B7;
+  padding: 0.25em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 1em;
+  color: white;
 }

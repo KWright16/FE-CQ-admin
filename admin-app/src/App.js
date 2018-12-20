@@ -14,8 +14,6 @@ import LeaderBoard from "./components/LeaderBoard";
 import AddChallenges from "./components/AddChallenges";
 import EditChallenge from './components/EditChallenge';
 
-
-
 class App extends Component {
   state = {
     user: {}

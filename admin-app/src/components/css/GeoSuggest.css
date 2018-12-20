@@ -1,27 +1,23 @@
-/**
- * The geosuggest module
- * NOTE: duplicated font-sizes' are for browsers which don't support rem (only IE 8)
- */
 .geosuggest {
   font-size: 18px;
   font-size: 1rem;
-  position: relative;
+  /* position: relative; */
   width: 50%;
-  margin: 1em auto;
+  /* margin: 1em auto; */
   text-align: left;
 }
-.geosuggest__input {
+/* .geosuggest__input {
   width: 100%;
-  border: 2px solid transparent #8360C3;
-  box-shadow: 0 0 1px #3d464d;
-  padding: 0.5em 1em;
-  -webkit-transition: border 0.2s, box-shadow 0.2s;
-  transition: border 0.2s, box-shadow 0.2s;
-}
-.geosuggest__input:focus {
+  border: 2px solid #8360C3; */
+  /* box-shadow: 0 0 1px #3d464d; */
+  /* padding: 0.5em 1em; */
+  /* -webkit-transition: border 0.2s, box-shadow 0.2s;
+  transition: border 0.2s, box-shadow 0.2s; */
+
+/* .geosuggest__input:focus {
   border-color: #267dc0;
-  box-shadow: 0 0 0 transparent;
-}
+  /* box-shadow: 0 0 0 transparent; */
+
 .geosuggest__suggests {
   position: absolute;
   top: 100%;

@@ -28,7 +28,7 @@ class ViewTrail extends Component {
 
 
 
-          {trail.route.map(location => <div className="location" key={location.locationName}><h4>Location Name: {location.locationName}</h4><br />
+          {trail.route.map(location => <div className="location" key={location.name}><h4>Location Name: {location.name}</h4><br />
             <p>Latitude: {location.lat} <br></br>
               Longitude: {location.long} <br></br>
               Challenge Id: <Link className="vt-link" to={`/challenges/${location.challengeId}`}>{location.challengeId} </Link><br /> <br />

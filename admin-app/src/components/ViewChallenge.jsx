@@ -17,7 +17,7 @@ class ViewChallenge extends Component {
               <div>Answer: {challenge.answer}</div>
 
               <button>
-                  <Link to={`/admins/${this.props.username}/challenges/${this.props.challengeId}`}>
+                  <Link to={`/admins/${this.props.username}/challenges/${this.props.challengeId}/edit`}>
                     Edit Challenge 
                   </Link>
                 </button>

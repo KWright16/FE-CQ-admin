@@ -43,10 +43,11 @@ export const addRoute = async (routeArray, username, id) => {
 
 export const updateChallenge = async ( challengeType, question, answer, URL, challengeId, username
 ) => {
+  console.log('here')
   const { data } = await axios.post(
     `${BASE_URL}/admins/${username}/challenges/${challengeId}`,
     { challengeType, question, answer, URL } );
-
+    console.log(data, 'at data ')
   return data;
 };
 

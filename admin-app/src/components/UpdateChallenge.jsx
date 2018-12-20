@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import ImageUpload from "./ImageUpload";
 import * as api from "../api";
+import { navigate } from "@reach/router";
 
 class UpdateChallenge extends Component {
   state = {
     challengeType: "",
     question: "",
     answer: "",
-    URL: ""
-  };
+    URL: "",
+    msg: ''  };
 
   render() {
     return (
@@ -50,6 +51,8 @@ class UpdateChallenge extends Component {
             <div />
           )}
           <button>Update</button>
+          <br></br>
+          {this.state.msg && <>'Challenge Updated'</>}
         </form>
       </main>
     );
@@ -71,10 +74,22 @@ class UpdateChallenge extends Component {
 
 
   handleSubmit = event => {
+
     event.preventDefault();
     const { challengeType, question, answer, URL } = this.state;
     const { challengeId, username } = this.props;
-    api.updateChallenge(challengeType, question, answer, URL, challengeId, username);
+    api.updateChallenge(challengeType, question, answer, URL, challengeId, username)
+    .then((data)=> {
+        
+      this.setState({
+        msg: data
+      })
+    })
+    .then(() => {
+      navigate('/new/challenges')
+    })
+    
+    
   };
 }
 

@@ -143,7 +143,7 @@ class AddTrail extends Component {
 
       this.setState({
         route: this.state.route.concat({
-          locationName: suggest.gmaps.name,
+          name: suggest.gmaps.name,
           lat: suggest.location.lat,
           long: suggest.location.lng
         })

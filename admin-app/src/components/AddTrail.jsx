@@ -4,7 +4,7 @@ import "./css/AddTrail.css";
 import Geosuggest from "react-geosuggest";
 import "./css/GeoSuggest.css";
 import * as api from "../api.js";
-import AddChallenges from "./AddChallenges";
+import { navigate } from "@reach/router";
 
 class AddTrail extends Component {
   state = {
@@ -16,11 +16,15 @@ class AddTrail extends Component {
       long: ""
     },
     challengeIds: [],
-    displayChallengeAdder: false
+    //displayChallengeAdder: false,
+    noOfLocations: ''
   };
 
   render() {
     const fixtures = [];
+    const { noOfLocations } = this.state;
+    const locationsGeos = this.createGeoLocationsInput(noOfLocations)
+
     return (
       <main className="add-trail">
         <h2>Add Trail</h2>
@@ -42,75 +46,29 @@ class AddTrail extends Component {
             radius="20"
             placeholder="Enter a city"
           />
-          <p>Add routes to the Trail</p>
-
-          <Geosuggest
-            fixtures={fixtures}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            onChange={this.onLocationChange}
-            onSuggestSelect={this.onSuggestSelectLocation}
-            onSuggestNoResults={this.onSuggestNoResults}
-            location={new google.maps.LatLng(51.50853, -0.12574)}
-            radius="20"
-            placeholder="Enter a location"
+          
+          <h3>Add routes to the Trail</h3>
+          <input
+            placeholder="Enter the number of locations to add to route"
+            value={this.state.noOfLocations}
+            onChange={this.handleChange}
+            name="noOfLocations"
           />
 
-          <Geosuggest
-            fixtures={fixtures}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            onChange={this.onLocationChange}
-            onSuggestSelect={this.onSuggestSelectLocation}
-            onSuggestNoResults={this.onSuggestNoResults}
-            location={new google.maps.LatLng(51.50853, -0.12574)}
-            radius="20"
-            placeholder="Enter a location"
-          />
+          
 
-          <Geosuggest
-            fixtures={fixtures}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            onChange={this.onLocationChange}
-            onSuggestSelect={this.onSuggestSelectLocation}
-            onSuggestNoResults={this.onSuggestNoResults}
-            location={new google.maps.LatLng(51.50853, -0.12574)}
-            radius="20"
-            placeholder="Enter a location"
-          />
-          <Geosuggest
-            fixtures={fixtures}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            onChange={this.onLocationChange}
-            onSuggestSelect={this.onSuggestSelectLocation}
-            onSuggestNoResults={this.onSuggestNoResults}
-            location={new google.maps.LatLng(51.50853, -0.12574)}
-            radius="20"
-            placeholder="Enter a location"
-          />
+          {locationsGeos.map((geo => geo))}
 
-          <Geosuggest
-            fixtures={fixtures}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            onChange={this.onLocationChange}
-            onSuggestSelect={this.onSuggestSelectLocation}
-            onSuggestNoResults={this.onSuggestNoResults}
-            location={new google.maps.LatLng(51.50853, -0.12574)}
-            radius="20"
-            placeholder="Enter a location"
-          />
+          
           <button>Create</button>
         </form>
 
-        {this.state.displayChallengeAdder && (
+        {/* {this.state.displayChallengeAdder && (
           <AddChallenges
             challengeIds={this.state.challengeIds}
             username={this.props.user.username}
           />
-        )}
+        )} */}
       </main>
     );
   }
@@ -120,7 +78,22 @@ class AddTrail extends Component {
     });
   };
 
+  createGeoLocationsInput = (locationsNumber) => {
+    const geoLocsArray = [];
 
+    for (let i = 0; i < locationsNumber; i++) {
+      geoLocsArray.push( <Geosuggest
+      onChange={this.onLocationChange}
+      onSuggestSelect={this.onSuggestSelectLocation}
+      onSuggestNoResults={this.onSuggestNoResults}
+      location={new google.maps.LatLng(51.50853, -0.12574)}
+      radius="20"
+      placeholder="Enter a location"
+    />)
+    }
+
+    return geoLocsArray;
+  }
 
   onSuggestSelect = suggest => {
     if (suggest) {
@@ -147,8 +120,18 @@ class AddTrail extends Component {
         return api.addRoute(this.state.route, user.username, id);
       })
       .then(challengeIds => {
-
-        this.setState({ challengeIds, displayChallengeAdder: true });
+       localStorage.setItem('challengeIds', JSON.stringify(challengeIds))
+       const trailId = this.state.name.replace(/\s/g, "_").toLowerCase();
+       localStorage.setItem('trailId', JSON.stringify(trailId))
+       
+        navigate('/new/challenges', {
+          //replace: true,
+          state: {
+            challengeIds,
+            trailId
+          }
+        })
+        
       });
   };
 

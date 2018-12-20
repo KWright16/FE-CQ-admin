@@ -11,6 +11,9 @@ import Footer from "./components/Footer";
 import UpdateChallenge from "./components/UpdateChallenge";
 import ViewChallenge from "./components/ViewChallenge";
 import LeaderBoard from "./components/LeaderBoard";
+import AddChallenges from "./components/AddChallenges";
+import EditChallenge from './components/EditChallenge';
+
 
 
 class App extends Component {
@@ -37,6 +40,8 @@ class App extends Component {
             username={this.state.user.username}
           />
           <LeaderBoard path='players' />
+          <AddChallenges path='/new/challenges' username={this.state.user.username} />
+          <EditChallenge path="admins/:adminName/challenges/:challengeId/edit"/>
         </Router>
       </div>
     );

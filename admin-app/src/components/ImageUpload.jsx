@@ -37,7 +37,7 @@ class ImageUpload extends Component {
         console.log(error); //complete function
       },
       () => {
-        //complete function
+        
         storage
           .ref("images")
           .child(image.name)

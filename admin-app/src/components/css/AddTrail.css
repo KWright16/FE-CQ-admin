@@ -10,7 +10,6 @@
   color: white;
 }
 .add-trail form {
-  border: solid 1px green;
   padding: 0;
   margin: 0;
   width: 100%;
@@ -26,4 +25,7 @@
 .add-trail button {
   background-color: #8360c3;
   
+}
+.add-trail input {
+  border: 1px #8360c3 solid;    
 }

@@ -21,7 +21,7 @@ class UpdateChallenge extends Component {
           <select value={this.state.challengeType} onChange={this.handleChange}>
             <option>Choose Challenge Type</option>
             <option value="question"> Question </option>
-            <option value="image-recognition"> Image Recognition </option>
+            <option value="image"> Image Recognition </option>
           </select>{" "}
           <br /> <br />
           {this.state.challengeType === "question" ? (
@@ -41,9 +41,9 @@ class UpdateChallenge extends Component {
                 onChange={this.handleInputChange}
               />
             </div>
-          ) : this.state.challengeType === "image-recognition" ? (
+          ) : this.state.challengeType === "image" ? (
             <div>
-               <input placeholder='type question' onChange={this.handleInputChange} /> <br/> <br></br>
+               <input placeholder='type question' name='question' onChange={this.handleInputChange} /> <br/> <br></br>
                {<ImageUpload setURL={this.setURL} />}
                {this.state.URL && <>'Image Uploaded'</>}
                </div>

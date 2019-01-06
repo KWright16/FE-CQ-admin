@@ -1,44 +1,66 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Introduction
 
-## Available Scripts
+This repository serves as the frontend for the admin app of the City Quest game; a location based multiplayer treasure hunt style game featuring question and photo recognition challenges. . It allows the admin to add or edit routes and challenges for the City Quest. The admin can also view all the trails and also individual challenges and trails. 
 
+This web based app is built in React, using Reach Router. 
+
+It uses Axios to make requests and relies on a Back-End API, which can be found [here](https://city-quest-game.herokuapp.com/api) on Heroku.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js
+- React
+
+NC News has the following dependencies -
+   ```
+     "@fortawesome/fontawesome-svg-core": "^1.2.10",
+    "@fortawesome/free-regular-svg-icons": "^5.6.1",
+    "@fortawesome/free-solid-svg-icons": "^5.6.1",
+    "@fortawesome/react-fontawesome": "^0.1.3",
+    "@mdi/js": "^3.2.89",
+    "@mdi/react": "^1.1.0",
+    "@reach/router": "^1.2.1",
+    "axios": "^0.18.0",
+    "chai": "^4.2.0",
+    "firebase": "^5.7.0",
+    "mocha": "^5.2.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-geosuggest": "^2.9.0",
+    "react-images-upload": "^1.2.3",
+    "react-scripts": "2.1.1",
+    "reactjs-localstorage": "0.0.7"
+```
+
+You can install these dependencies after cloning down the repo using 
+```
+npm i 
+```
+
+or installing them manually.
+
+### Available Scripts
 In the project directory, you can run:
+```
+npm start
+```
+which will run the app in the development mode.
 
-### `npm start`
+Open http://localhost:3000 to view it in the browser.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Navigating the Website
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- To use the web app the admin need to log in.  
 
-### `npm test`
+**Username 'admin01' and password '123' can be used to try the app**
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Once logged in the admin can use the options on the side bar to view trails or leaderboard or to add a new trail.
+- To add a new trail the admin can give the trail a unique name, and select locations from the geosuggest inputs.
 
-### `npm run build`
+- Once a new trail is created the admin can add challenges to that trail on the next page. To add an image based challenge, the 'image' option should be selected from the drop down and the desired image can be uploaded for analysis. 
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import * as api from "../api.js";
 import Trail from "./Trail";
 import "./css/ViewAllTrails.css";
+import '../App.css'
 
 class ViewAllTrails extends Component {
   state = {
@@ -11,7 +12,6 @@ class ViewAllTrails extends Component {
     const { trails } = this.state;
     return (
       <main className="view-trails">
-        <h2 className="header">List of Trails</h2>
         <ul>
           {trails.map(trail => {
             return (

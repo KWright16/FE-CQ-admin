@@ -8,11 +8,13 @@ class Trail extends Component {
   render() {
     const { trail } = this.props
     return (
-      <li className="single-trail">
-        <Link to={`/trails/${trail.id}`}><h3>{trail.name}</h3></Link>
+      <li>
+        <h3><Link to={`/trails/${trail.id}`}>{trail.name}</Link></h3>
         <p>Region: {trail.region.city}</p>
         <p>Duration: {convertTime(trail.duration)}</p>
+        <div id="deletebutton">
         <button onClick={(event) => { this.handleDeleteClick(event, trail.id) }}> Delete Trail </button>
+        </div>
 
       </li>
     );

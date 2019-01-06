@@ -14,12 +14,8 @@ class Login extends Component {
     if (user.username) {
       return (
         <main class="welcome">
-          <p>
-            CITY
-            <FontAwesomeIcon icon={faSearchLocation} />
-            QUEST
-          </p>
-          <p>Welcome to the City Quest Management Portal</p>
+          <p>Welcome to</p>
+          <img alt="city quest management" src="./assets/titlegrey.png" />
         </main>
       );
     } else {

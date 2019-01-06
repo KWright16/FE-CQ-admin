@@ -3,13 +3,12 @@
   font-size: 1rem;
   position: relative;
   width: 80%;
-  margin: 0.75em auto;
+  margin: 0 auto;
   text-align: left;
 }
 .geosuggest__input {
   width: 100%;
   border: 1px solid #8360C3; 
-  padding: 0.5em 1em;
   -webkit-transition: border 0.2s, box-shadow 0.2s;
   transition: border 0.2s, box-shadow 0.2s;
 }
@@ -26,7 +25,7 @@
   padding: 0;
   margin-top: -1px;
   background: #fff;
-  border: 2px solid #8360c3;
+  border: 1px solid #515151;
   border-top-width: 0;
   overflow-x: hidden;
   overflow-y: auto;

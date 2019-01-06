@@ -7,8 +7,6 @@ header {
   flex-direction: row;
   justify-content: center;
   align-content: center;
-  /* background: linear-gradient(to left, #53A97A, #2EA7D8); */
-  /* background: #2ebf91; */
   background-color: #2ebf91;
 }
 h1 {
@@ -16,8 +14,8 @@ h1 {
   margin: 0;
   align-self: center;
 }
-img {
-  height: 2em;
+h1 img {
+  height: 1.5em;
   width: auto;
   margin: 0;
   padding: 0;

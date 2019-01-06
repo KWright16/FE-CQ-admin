@@ -1,4 +1,78 @@
 .add-trail {
+  min-height: 100%;
+  overflow-y: scroll;
+  border: solid 0px gold;
+  align-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.add-trail h2 {
+  border: solid 0px red;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  background-color: #515151;
+  color: white;
+  width: 80%;
+  border-radius: 8px;
+  margin: 20px auto;
+  padding: 10px 0;
+}
+.add-trail form {
+  border: solid 0px green;
+  width: 80%;
+  margin: 0 auto;
+  background-color: #5990AA;
+  border-radius: 5px;
+}
+.add-trail form input {
+  border: solid 1px #515151;
+  border-radius: 7px;
+  height: 30px;
+  margin: 20px auto;
+  background-color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  font-size: 20px;
+  color: #515151;
+}
+.add-trail .inputs {
+  border: solid 0px magenta;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.add-trail .inputs .trail-namer {
+  grid-row: 1 / 2;
+  grid-column: 1 / 3;
+  width: 80%;
+  margin-top: 30px;
+}
+.add-trail .inputs .geosuggest-1 {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  width: 80%;
+  align-self: center;
+  margin-left: 50px;
+}
+.add-trail .inputs .num-loc {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  width: 60%;
+}
+.locations-adder {
+  border: solid 0px red;
+}
+.add-trail form button {
+  margin: 10px 0;
+  border: solid 1.1px white;
+}
+/* .add-trail {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,4 +102,4 @@
 }
 .add-trail input {
   border: 1px #8360c3 solid;    
-}
+} */
